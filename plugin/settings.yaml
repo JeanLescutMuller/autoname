@@ -1,0 +1,13 @@
+# session-autoname configuration
+
+# LLM settings
+model: sonnet
+effort: low
+max_prompt_chars: 2000
+max_title_length: 60
+
+# Stop hook settings
+hook_enabled: true
+min_prompts: 2
+refresh_every: 10
+tmux_rename: true
