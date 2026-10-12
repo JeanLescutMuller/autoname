@@ -94,6 +94,4 @@ Writing `custom-title` to JSONL updates `claude --list` and asm index, but does 
 - [ ] Test: tmux window rename (if tmux active)
 - [ ] Test: `refresh_every` triggers re-titling after N messages past last auto-title
 - [ ] Add `homepage` to `plugin.json` after publishing (e.g., Workplace post or wiki URL)
-- [ ] asm integration: replace `llm_title()` with calls to `session-autoname.py`
-- [ ] asm integration: replace `refresh_title_from_index()` with `session-autoname.py --index`
 - [ ] Clean up old artifacts (`~/.claude/hooks/auto-rename-session.py`, old hook entries in `settings.json`)
