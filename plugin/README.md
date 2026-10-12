@@ -19,7 +19,7 @@ session-autoname.py --index <path> [OPTIONS]
 | Flag | Values | Default | What it does |
 |------|--------|---------|-------------|
 | `--jsonl <path>` | file path | | Parse a JSONL transcript |
-| `--index <path>` | file path | | Parse a CSM index JSON |
+| `--index <path>` | file path | | Parse an asm index JSON |
 | `--skip-if` | `any`, `manual`, `none` | `any` | When to skip: `any` = title exists, `manual` = only manual title, `none` = always regenerate |
 | `--append-to-jsonl` | flag | off | Write the `custom-title` entry to the JSONL. Without this, just prints to stdout |
 | `--fallback` | `none`, `first-prompt`, `placeholder` | `none` | What to use when LLM fails |

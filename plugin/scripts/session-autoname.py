@@ -369,7 +369,7 @@ def _write_index(idx_path: str, doc: Dict) -> None:
 
 def cmd_index(idx_path: str, config: Dict, skip_if: str = "any",
               write_to_disk: bool = False, fallback: str = "none") -> int:
-    """Generate title from CSM index JSON."""
+    """Generate title from asm index JSON."""
     doc = _read_index(idx_path)
     if doc is None:
         return 1

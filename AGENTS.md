@@ -6,14 +6,14 @@ Claude-templates plugin that auto-generates session titles via LLM.
 
 - **Stop hook** fires after each assistant turn. Counts user messages in the JSONL since the last auto-generated title. If the count crosses a threshold, calls `session-autoname.py` to generate a new title via LLM.
 - **`/autoname` command** lets the user manually trigger title generation.
-- **`session-autoname.py`** is the core script. Two modes: `--jsonl` (live sessions) and `--index` (CSM orphan backfill).
+- **`session-autoname.py`** is the core script. Two modes: `--jsonl` (live sessions) and `--index` (asm orphan backfill).
 
 ## CLI options
 
 | Flag | Values | Default | What it does |
 |------|--------|---------|-------------|
 | `--jsonl <path>` | file path | | Parse a JSONL transcript |
-| `--index <path>` | file path | | Parse a CSM index JSON |
+| `--index <path>` | file path | | Parse an asm index JSON |
 | `--skip-if` | `any`, `manual`, `none` | `any` | When to skip: `any` = title exists, `manual` = only manual title, `none` = always regenerate |
 | `--append-to-jsonl` | flag | off | Write the `custom-title` entry to the JSONL. Without this, just prints to stdout |
 | `--fallback` | `none`, `first-prompt`, `placeholder` | `none` | What to use when LLM fails |
@@ -83,7 +83,7 @@ No temp files. All state derived from the JSONL:
 
 ## TUI header limitation
 
-Writing `custom-title` to JSONL updates `claude --list` and CSM index, but does NOT update the live TUI header. Only `/rename` (typed by the user) does that.
+Writing `custom-title` to JSONL updates `claude --list` and asm index, but does NOT update the live TUI header. Only `/rename` (typed by the user) does that.
 
 ## To do
 
@@ -94,6 +94,6 @@ Writing `custom-title` to JSONL updates `claude --list` and CSM index, but does 
 - [ ] Test: tmux window rename (if tmux active)
 - [ ] Test: `refresh_every` triggers re-titling after N messages past last auto-title
 - [ ] Add `homepage` to `plugin.json` after publishing (e.g., Workplace post or wiki URL)
-- [ ] CSM integration: replace `llm_title()` with calls to `session-autoname.py`
-- [ ] CSM integration: replace `refresh_title_from_index()` with `session-autoname.py --index`
+- [ ] asm integration: replace `llm_title()` with calls to `session-autoname.py`
+- [ ] asm integration: replace `refresh_title_from_index()` with `session-autoname.py --index`
 - [ ] Clean up old artifacts (`~/.claude/hooks/auto-rename-session.py`, old hook entries in `settings.json`)
