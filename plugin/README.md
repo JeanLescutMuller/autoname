@@ -1,5 +1,7 @@
 # autoname
 
+> **Status (November 2026): mostly obsolete.** Claude Code now names sessions by itself, so most people no longer need this plugin. It stays here, archived and MIT-licensed, for reference and for anyone who wants what it adds on top: re-titling as the session moves on, the `/autoname` command, and renaming the tmux window.
+
 Auto-generate session titles via LLM at progressive message intervals.
 
 ## What it does
